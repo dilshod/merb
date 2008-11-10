@@ -199,7 +199,7 @@ module Merb
       def compiled_statement(lineno)
         els_if = if lineno == 0
           '  if '
-        elsif
+        else
           (lineno % 100) == 0 ? ' end || if ' : ' elsif '
         end
 
