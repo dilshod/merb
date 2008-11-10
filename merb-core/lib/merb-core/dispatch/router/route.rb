@@ -6,7 +6,7 @@ module Merb
     class Route #:nodoc:
       SEGMENT_REGEXP               = /(:([a-z](_?[a-z0-9])*))/
       OPTIONAL_SEGMENT_REGEX       = /^.*?([\(\)])/i
-      SEGMENT_REGEXP_WITH_BRACKETS = /(:[a-z_]+)(\[(\d+)\])?/
+      SEGMENT_REGEXP_WITH_BRACKETS = /(:[a-z_][a-z0-9_]*)(\[(\d+)\])?/
       JUST_BRACKETS                = /\[(\d+)\]/
       SEGMENT_CHARACTERS           = "[^\/.,;?]".freeze
 
