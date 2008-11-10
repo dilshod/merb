@@ -196,8 +196,12 @@ module Merb
       # Router.match compiled method.
       #
       # :api: private
-      def compiled_statement(first)
-        els_if = first ? '  if ' : '  elsif '
+      def compiled_statement(lineno)
+        els_if = if lineno == 0
+          '  if '
+        elsif
+          (lineno % 100) == 0 ? ' end || if ' : ' elsif '
+        end
 
         code = ""
         code << els_if << condition_statements.join(" && ") << "\n"

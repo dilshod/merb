@@ -335,7 +335,7 @@ module Merb
           routes.each_with_index do |route, i|
             route.freeze
             route.conditions.keys.each { |key| condition_keys << key }
-            if_statements << route.compiled_statement(i == 0)
+            if_statements << route.compiled_statement(i)
           end
           
           statement =  "def match(request)\n"
